@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enlace de Carmen & Pablo</title>
+    
+    <!-- Tailwind CSS para el diseño rápido -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Playfair Display (Serif elegante) y Lato (Sans-serif limpia) -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Configuración personalizada de Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        olive: '#8a9a86',      /* Verde oliva pastel */
+                        oliveDark: '#5c715e',  /* Verde oliva oscuro para textos */
+                        pinkPastel: '#f4e4e4', /* Rosa pastel muy suave */
+                        pinkDark: '#d49a9a',   /* Rosa oscuro para acentos */
+                        cream: '#fcfaf8'       /* Fondo crema/hueso */
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Lato"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- CSS Personalizado para detallitos que Tailwind hace más pesados -->
+    <style>
+        body {
+            scroll-behavior: smooth;
+        }
+        /* Patrón CSS sutil de fondo en lugar de foto */
+        .bg-pattern {
+            background-color: #fcfaf8;
+            background-image: radial-gradient(#d49a9a 0.5px, transparent 0.5px), radial-gradient(#d49a9a 0.5px, #fcfaf8 0.5px);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+            opacity: 0.8;
+        }
+        /* Línea del timeline */
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background-color: #8a9a86;
+            top: 0;
+            z-index: 0;
+        }
+        @media (max-width: 768px) {
+            .timeline-line::before {
+                left: 20px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-cream text-oliveDark font-sans antialiased">
+
+    <!-- HERO SECTION -->
+    <header class="relative min-h-screen flex flex-col items-center justify-center bg-pinkPastel overflow-hidden border-b-8 border-olive">
+        <!-- Decoración CSS pura (Círculos difuminados) -->
+        <div class="absolute top-[-10%] left-[-10%] w-96 h-96 bg-white rounded-full mix-blend-multiply filter blur-3xl opacity-50"></div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-olive rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+        
+        <div class="relative z-10 text-center px-6">
+            <p class="uppercase tracking-widest text-sm mb-4 text-olive">¡Nos casamos!</p>
+            <h1 class="font-serif text-6xl md:text-8xl text-oliveDark mb-6">Carmen <span class="text-pinkDark italic">&</span> Pablo</h1>
+            <p class="text-xl md:text-2xl font-light tracking-wide mb-8">12 de Octubre de 2026</p>
+            
+            <a href="#rsvp" class="inline-block bg-olive text-white px-8 py-3 rounded-full uppercase tracking-wider text-sm hover:bg-oliveDark transition duration-300 shadow-lg">
+                Confirmar Asistencia
+            </a>
+        </div>
+    </header>
+
+    <!-- CRONOGRAMA (TIMELINE) -->
+    <section class="py-20 px-6 max-w-4xl mx-auto relative">
+        <div class="text-center mb-16">
+            <h2 class="font-serif text-4xl mb-2">El Gran Día</h2>
+            <p class="text-olive">No llegues tarde, ¡pasamos lista!</p>
+        </div>
+
+        <div class="relative timeline-line">
+            <!-- Evento 1 -->
+            <div class="relative z-10 flex flex-col md:flex-row items-center justify-between mb-12">
+                <div class="md:w-5/12 text-right md:pr-8 hidden md:block">
+                    <h3 class="font-serif text-2xl">La Ceremonia</h3>
+                    <p class="text-sm mt-2">Iglesia de San Nicolás. Poneos guapos.</p>
+                </div>
+                <div class="w-12 h-12 bg-cream border-4 border-olive rounded-full flex items-center justify-center mx-auto md:mx-0 absolute left-[20px] md:left-1/2 transform -translate-x-1/2 shadow-md">
+                    <span class="font-serif font-bold text-olive">12:00</span>
+                </div>
+                <div class="md:w-5/12 pl-16 md:pl-8 mt-4 md:mt-0 text-left w-full">
+                    <h3 class="font-serif text-2xl md:hidden">La Ceremonia</h3>
+                    <p class="text-sm mt-2 md:hidden">Iglesia de San Nicolás. Poneos guapos.</p>
+                    <i class="fa-solid fa-church text-3xl text-pinkDark hidden md:inline-block"></i>
+                </div>
+            </div>
+
+            <!-- Evento 2 -->
+            <div class="relative z-10 flex flex-col md:flex-row items-center justify-between mb-12">
+                <div class="md:w-5/12 text-right md:pr-8 w-full pl-16 md:pl-0 mt-4 md:mt-0 md:text-right text-left order-2 md:order-1">
+                    <h3 class="font-serif text-2xl md:hidden">El Cóctel</h3>
+                    <p class="text-sm mt-2 md:hidden">Finca Los Olivos. Empezamos a calentar.</p>
+                    <i class="fa-solid fa-champagne-glasses text-3xl text-pinkDark hidden md:inline-block"></i>
+                </div>
+                <div class="w-12 h-12 bg-cream border-4 border-olive rounded-full flex items-center justify-center mx-auto md:mx-0 absolute left-[20px] md:left-1/2 transform -translate-x-1/2 shadow-md order-1 md:order-2">
+                    <span class="font-serif font-bold text-olive">14:00</span>
+                </div>
+                <div class="md:w-5/12 pl-8 hidden md:block order-3">
+                    <h3 class="font-serif text-2xl">El Cóctel</h3>
+                    <p class="text-sm mt-2">Finca Los Olivos. Empezamos a calentar.</p>
+                </div>
+            </div>
+
+            <!-- Evento 3 -->
+            <div class="relative z-10 flex flex-col md:flex-row items-center justify-between mb-12">
+                <div class="md:w-5/12 text-right md:pr-8 hidden md:block">
+                    <h3 class="font-serif text-2xl">Banquete</h3>
+                    <p class="text-sm mt-2">A comer rico. Id guardando hueco para el postre.</p>
+                </div>
+                <div class="w-12 h-12 bg-cream border-4 border-olive rounded-full flex items-center justify-center mx-auto md:mx-0 absolute left-[20px] md:left-1/2 transform -translate-x-1/2 shadow-md">
+                    <span class="font-serif font-bold text-olive">15:30</span>
+                </div>
+                <div class="md:w-5/12 pl-16 md:pl-8 mt-4 md:mt-0 text-left w-full">
+                    <h3 class="font-serif text-2xl md:hidden">Banquete</h3>
+                    <p class="text-sm mt-2 md:hidden">A comer rico. Id guardando hueco para el postre.</p>
+                    <i class="fa-solid fa-utensils text-3xl text-pinkDark hidden md:inline-block"></i>
+                </div>
+            </div>
+
+            <!-- Evento 4 -->
+            <div class="relative z-10 flex flex-col md:flex-row items-center justify-between">
+                <div class="md:w-5/12 text-right md:pr-8 w-full pl-16 md:pl-0 mt-4 md:mt-0 md:text-right text-left order-2 md:order-1">
+                    <h3 class="font-serif text-2xl md:hidden">Barra Libre</h3>
+                    <p class="text-sm mt-2 md:hidden">Hasta que el cuerpo aguante.</p>
+                    <i class="fa-solid fa-music text-3xl text-pinkDark hidden md:inline-block"></i>
+                </div>
+                <div class="w-12 h-12 bg-cream border-4 border-olive rounded-full flex items-center justify-center mx-auto md:mx-0 absolute left-[20px] md:left-1/2 transform -translate-x-1/2 shadow-md order-1 md:order-2">
+                    <span class="font-serif font-bold text-olive">18:00</span>
+                </div>
+                <div class="md:w-5/12 pl-8 hidden md:block order-3">
+                    <h3 class="font-serif text-2xl">Barra Libre</h3>
+                    <p class="text-sm mt-2">Hasta que el cuerpo aguante.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAPAS E INDICACIONES -->
+    <section class="py-20 bg-olive text-cream px-6">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="font-serif text-4xl mb-2 text-white">Dónde ir</h2>
+                <p class="text-pinkPastel">Para que el GPS no os mande a un patatal.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Card Ceremonia -->
+                <div class="bg-white text-oliveDark p-8 rounded-xl shadow-lg text-center">
+                    <i class="fa-solid fa-building-columns text-4xl text-olive mb-4"></i>
+                    <h3 class="font-serif text-2xl mb-2">La Ceremonia</h3>
+                    <p class="mb-6 font-light">Iglesia de San Nicolás<br>Plaza del Carmen, 1, Centro.</p>
+                    <div class="flex flex-col gap-3">
+                        <a href="#" class="bg-pinkPastel text-oliveDark px-4 py-2 rounded font-bold hover:bg-pinkDark hover:text-white transition"><i class="fa-brands fa-google mr-2"></i>Abrir en Google Maps</a>
+                        <a href="#" class="border border-olive text-olive px-4 py-2 rounded font-bold hover:bg-olive hover:text-white transition"><i class="fa-brands fa-waze mr-2"></i>Abrir en Waze</a>
+                    </div>
+                </div>
+
+                <!-- Card Banquete -->
+                <div class="bg-white text-oliveDark p-8 rounded-xl shadow-lg text-center">
+                    <i class="fa-solid fa-tree text-4xl text-olive mb-4"></i>
+                    <h3 class="font-serif text-2xl mb-2">La Celebración</h3>
+                    <p class="mb-6 font-light">Finca Los Olivos<br>Carretera del Valle km 4.</p>
+                    <div class="flex flex-col gap-3">
+                        <a href="#" class="bg-pinkPastel text-oliveDark px-4 py-2 rounded font-bold hover:bg-pinkDark hover:text-white transition"><i class="fa-brands fa-google mr-2"></i>Abrir en Google Maps</a>
+                        <a href="#" class="border border-olive text-olive px-4 py-2 rounded font-bold hover:bg-olive hover:text-white transition"><i class="fa-brands fa-waze mr-2"></i>Abrir en Waze</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INFO: ALOJAMIENTO, TRANSPORTE Y DRESS CODE -->
+    <section class="py-20 px-6 max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-3 gap-10 text-center">
+            
+            <!-- Transporte -->
+            <div>
+                <div class="w-16 h-16 mx-auto bg-pinkPastel rounded-full flex items-center justify-center mb-4">
+                    <i class="fa-solid fa-bus text-2xl text-pinkDark"></i>
+                </div>
+                <h3 class="font-serif text-xl mb-3">Autobuses</h3>
+                <p class="text-sm font-light">Saldrán autobuses desde la Plaza Mayor a las 11:15h. Habrá viajes de vuelta a las 22:00h y a las 02:00h. ¡Olvida el coche!</p>
+            </div>
+
+            <!-- Alojamiento -->
+            <div>
+                <div class="w-16 h-16 mx-auto bg-pinkPastel rounded-full flex items-center justify-center mb-4">
+                    <i class="fa-solid fa-bed text-2xl text-pinkDark"></i>
+                </div>
+                <h3 class="font-serif text-xl mb-3">Alojamiento</h3>
+                <p class="text-sm font-light">Tenemos descuento en el <strong>Hotel Centro***</strong> indicando que venís a nuestra boda. Tlf: 900 123 456.</p>
+            </div>
+
+            <!-- Dress Code -->
+            <div>
+                <div class="w-16 h-16 mx-auto bg-pinkPastel rounded-full flex items-center justify-center mb-4">
+                    <i class="fa-solid fa-shirt text-2xl text-pinkDark"></i>
+                </div>
+                <h3 class="font-serif text-xl mb-3">Dress Code</h3>
+                <p class="text-sm font-light">Traje oscuro y vestido largo o de cóctel. <em>Por favor, reservad el color blanco exclusivo para la novia.</em> Gran parte es en césped, cuidado con los tacones de aguja.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- LISTA DE BODAS (Discreta) -->
+    <section class="py-12 bg-pinkPastel px-6 text-center">
+        <div class="max-w-2xl mx-auto">
+            <i class="fa-solid fa-gift text-3xl text-pinkDark mb-4"></i>
+            <h2 class="font-serif text-3xl mb-4">Nuestro mejor regalo...</h2>
+            <p class="font-light mb-6">Es que nos acompañéis en este día. Pero si además queréis tener un detalle para ayudarnos con el viaje de novios a Japón, os lo agradecemos de corazón.</p>
+            
+            <!-- Botón para mostrar cuenta (discreto) -->
+            <button onclick="document.getElementById('cuenta-bancaria').classList.toggle('hidden')" class="text-olive font-bold border-b-2 border-olive pb-1 hover:text-oliveDark transition">
+                Ver información de regalo
+            </button>
+            
+            <div id="cuenta-bancaria" class="hidden mt-6 bg-white p-6 rounded-lg shadow-sm">
+                <p class="font-mono text-lg tracking-wider text-gray-700">ESXX XXXX XXXX XXXX XXXX</p>
+                <p class="text-sm text-gray-500 mt-2">Titulares: Carmen y Pablo</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- RSVP FORMULARIO AVANZADO -->
+    <section id="rsvp" class="py-20 px-6 max-w-3xl mx-auto">
+        <div class="bg-white shadow-xl rounded-2xl p-8 md:p-12 border-t-8 border-olive">
+            <div class="text-center mb-10">
+                <h2 class="font-serif text-4xl mb-2">Confirma tu asistencia</h2>
+                <p class="text-sm font-light">Por favor, confírmanos antes del 1 de Septiembre.</p>
+            </div>
+
+            <form action="#" method="POST" onsubmit="event.preventDefault(); alert('¡Frontend funcionando! Aquí iría tu conexión a base de datos o correo.');">
+                
+                <!-- Invitado Principal -->
+                <div class="mb-6">
+                    <label class="block text-sm font-bold mb-2 text-oliveDark">Nombre y Apellidos *</label>
+                    <input type="text" required class="w-full border-b-2 border-gray-200 py-2 focus:outline-none focus:border-olive bg-transparent transition" placeholder="P. ej: María Gómez">
+                </div>
+
+                <!-- Asistencia -->
+                <div class="mb-8">
+                    <p class="block text-sm font-bold mb-3 text-oliveDark">¿Nos acompañarás? *</p>
+                    <div class="flex gap-6">
+                        <label class="flex items-center cursor-pointer">
+                            <input type="radio" name="asistencia" value="si" class="mr-2 text-olive focus:ring-olive cursor-pointer" required onclick="document.getElementById('detalles-asistencia').classList.remove('hidden')">
+                            <span>¡Sí, allí estaré!</span>
+                        </label>
+                        <label class="flex items-center cursor-pointer">
+                            <input type="radio" name="asistencia" value="no" class="mr-2 text-olive focus:ring-olive cursor-pointer" onclick="document.getElementById('detalles-asistencia').classList.add('hidden')">
+                            <span>No podré asistir</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Detalles que se muestran solo si asiste -->
+                <div id="detalles-asistencia" class="hidden space-y-6">
+                    
+                    <!-- Menú Invitado Principal -->
+                    <div>
+                        <label class="block text-sm font-bold mb-2 text-oliveDark">Tu preferencia de menú *</label>
+                        <select class="w-full border-b-2 border-gray-200 py-2 focus:outline-none focus:border-olive bg-transparent" required>
+                            <option value="">Selecciona una opción...</option>
+                            <option value="carne">Menú Carne</option>
+                            <option value="pescado">Menú Pescado</option>
+                            <option value="vegano">Menú Vegano / Vegetariano</option>
+                        </select>
+                    </div>
+
+                    <!-- Alergias Principal -->
+                    <div>
+                        <label class="block text-sm font-bold mb-2 text-oliveDark">Alergias o intolerancias</label>
+                        <textarea class="w-full border-b-2 border-gray-200 py-2 focus:outline-none focus:border-olive bg-transparent resize-none" rows="2" placeholder="Ninguna / Celíaco / Alergia a frutos secos..."></textarea>
+                    </div>
+
+                    <hr class="border-gray-100 my-6">
+
+                    <!-- Contenedor de Acompañantes Dinámico -->
+                    <div id="contenedor-acompanantes"></div>
+
+                    <!-- Botón Añadir Acompañante (JS puro) -->
+                    <button type="button" onclick="agregarAcompanante()" class="text-sm font-bold text-pinkDark hover:text-olive transition flex items-center">
+                        <i class="fa-solid fa-plus-circle mr-2"></i> Añadir acompañante / niños
+                    </button>
+
+                </div>
+
+                <div class="mt-10 text-center">
+                    <button type="submit" class="bg-olive text-white px-10 py-4 rounded-full font-bold uppercase tracking-widest w-full md:w-auto hover:bg-oliveDark transition shadow-lg">
+                        Enviar Confirmación
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- GALERÍA DE RECUERDOS (Inactiva hasta después de la boda) -->
+    <section class="py-20 bg-pattern px-6">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="font-serif text-4xl mb-4">Galería de Recuerdos</h2>
+            <div class="bg-white p-8 rounded-xl shadow-md border border-gray-100 inline-block">
+                <i class="fa-solid fa-camera-retro text-5xl text-olive mb-4"></i>
+                <h3 class="font-bold text-xl mb-2">¡Preparad vuestras cámaras!</h3>
+                <p class="font-light text-gray-600 mb-6 max-w-md mx-auto">Esta sección se activará el día después de la boda. Aquí podréis subir todas las fotos que hagáis con el móvil y descargar las oficiales.</p>
+                <button disabled class="bg-gray-200 text-gray-400 px-6 py-2 rounded font-bold cursor-not-allowed">
+                    Subir fotos (Bloqueado)
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-oliveDark text-cream text-center py-8">
+        <p class="font-serif text-2xl mb-2">C <span class="text-pinkDark">&</span> P</p>
+        <p class="text-xs font-light tracking-widest uppercase">12 . 10 . 2026</p>
+    </footer>
+
+    <!-- JAVASCRIPT PARA EL FORMULARIO (Comportamiento Frontend) -->
+    <script>
+        let contadorAcompanantes = 0;
+
+        function agregarAcompanante() {
+            contadorAcompanantes++;
+            const contenedor = document.getElementById('contenedor-acompanantes');
+            
+            // Creamos un bloque HTML para el nuevo acompañante
+            const html = `
+                <div class="bg-gray-50 p-4 rounded-lg mb-4 relative border border-gray-100" id="acompanante-${contadorAcompanantes}">
+                    <button type="button" onclick="eliminarAcompanante(${contadorAcompanantes})" class="absolute top-2 right-2 text-red-400 hover:text-red-600">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                    
+                    <h4 class="font-bold text-sm mb-4 text-olive">Acompañante ${contadorAcompanantes}</h4>
+                    
+                    <div class="mb-4">
+                        <label class="block text-xs font-bold mb-1">Nombre completo *</label>
+                        <input type="text" required class="w-full border-b border-gray-300 py-1 focus:outline-none focus:border-olive bg-transparent text-sm">
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold mb-1">Menú *</label>
+                            <select class="w-full border-b border-gray-300 py-1 focus:outline-none focus:border-olive bg-transparent text-sm" required>
+                                <option value="">Seleccionar...</option>
+                                <option value="carne">Carne</option>
+                                <option value="pescado">Pescado</option>
+                                <option value="vegano">Vegano/Vegetariano</option>
+                                <option value="infantil">Menú Infantil</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold mb-1">Alergias</label>
+                            <input type="text" class="w-full border-b border-gray-300 py-1 focus:outline-none focus:border-olive bg-transparent text-sm" placeholder="Opcional">
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            // Lo inyectamos en el DOM
+            contenedor.insertAdjacentHTML('beforeend', html);
+        }
+
+        function eliminarAcompanante(id) {
+            const elemento = document.getElementById(`acompanante-${id}`);
+            if(elemento) {
+                elemento.remove();
+            }
+        }
+    </script>
+</body>
+</html>
